@@ -1,0 +1,20 @@
+{
+  "name": "202204-w2chwe-josep-andreu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josepandreu45/202204-W2CHWE-josep-andreu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josepandreu45/202204-W2CHWE-josep-andreu/issues"
+  },
+  "homepage": "https://github.com/josepandreu45/202204-W2CHWE-josep-andreu#readme"
+}
