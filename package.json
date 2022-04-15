@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/josepandreu45/202204-W2CHWE-josep-andreu/issues"
   },
-  "homepage": "https://github.com/josepandreu45/202204-W2CHWE-josep-andreu#readme"
+  "homepage": "https://github.com/josepandreu45/202204-W2CHWE-josep-andreu#readme",
+  "devDependencies": {
+    "husky": "^7.0.0"
+  }
 }
