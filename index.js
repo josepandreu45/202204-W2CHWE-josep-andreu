@@ -25,3 +25,19 @@ const crearGrid = () => {
   return grid;
 };
 crearGrid();
+
+const alive = [];
+const dead = [];
+
+const estadoFicha = () => {
+  for (let i = 0; i < grid.length; i++) {
+    if (grid[i].live) {
+      alive.push(grid[i]);
+    } else {
+      dead.push(grid[i]);
+    }
+  }
+  return alive;
+};
+
+estadoFicha();
