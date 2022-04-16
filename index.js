@@ -41,3 +41,18 @@ const estadoFicha = () => {
 };
 
 estadoFicha();
+
+const neightbours = () => {
+  for (let i = 0; i < grid.length; i++) {
+    grid[i].rightId = i + 1;
+    grid[i].leftId = i - 1;
+    grid[i].topId = i + columns;
+    grid[i].bottomId = i - columns;
+    grid[i].rightTopId = i + columns + 1;
+    grid[i].leftTopId = i + columns - 1;
+    grid[i].rightBottomId = i - columns + 1;
+    grid[i].leftBottomId = i - columns - 1;
+  }
+};
+
+neightbours();
