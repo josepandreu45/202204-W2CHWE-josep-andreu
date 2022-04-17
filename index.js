@@ -4,7 +4,7 @@ const columns = 8;
 class Ficha {
   ejeX;
   ejeY;
-  live = false;
+  live = 0;
 
   constructor(ejeX, ejeY) {
     this.ejeX = ejeX;
@@ -31,7 +31,7 @@ const dead = [];
 
 const estadoFicha = () => {
   for (let i = 0; i < grid.length; i++) {
-    if (grid[i].live === true) {
+    if (grid[i].live === 1) {
       alive.push(`${grid[i].id} ${grid[i].live}`);
     } else {
       dead.push(`${grid[i].id} ${grid[i].live}`);
@@ -107,13 +107,33 @@ const mappingBeightbours = () => {
   }
 };
 
-grid[7 - 1].live = true;
-grid[10 - 1].live = true;
-grid[11 - 1].live = true;
-grid[12 - 1].live = true;
-grid[21 - 1].live = true;
-grid[22 - 1].live = true;
-grid[28 - 1].live = true;
+grid[7 - 1].live = 1;
+grid[10 - 1].live = 1;
+grid[11 - 1].live = 1;
+grid[12 - 1].live = 1;
+grid[21 - 1].live = 1;
+grid[22 - 1].live = 1;
+grid[28 - 1].live = 1;
 
 mappingBeightbours();
 estadoFicha();
+
+const container = document.querySelector(".container");
+const createGrid = (row, column) => {
+  container.style.setProperty("--grid-rows", row);
+  container.style.setProperty("--grid-cols", column);
+  for (let y = 0; y < row; y++) {
+    for (let x = 0; x < column; x++) {
+      const cell = document.createElement("div");
+      cell.id = 0;
+
+      cell.data = {
+        idX: x,
+        idY: y,
+      };
+      container.appendChild(cell).className = "container__item";
+    }
+  }
+};
+
+createGrid(rows, columns);
