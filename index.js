@@ -1,5 +1,5 @@
-const rows = 3;
-const columns = 3;
+const rows = 8;
+const columns = 5;
 
 class Ficha {
   ejeX;
@@ -31,7 +31,7 @@ const dead = [];
 
 const estadoFicha = () => {
   for (let i = 0; i < grid.length; i++) {
-    if (grid[i].live) {
+    if (grid[i].live === true) {
       alive.push(grid[i]);
     } else {
       dead.push(grid[i]);
@@ -40,19 +40,28 @@ const estadoFicha = () => {
   return alive;
 };
 
-estadoFicha();
-
 const neightbours = () => {
   for (let i = 0; i < grid.length; i++) {
-    grid[i].rightId = i + 1;
-    grid[i].leftId = i - 1;
-    grid[i].topId = i + columns;
-    grid[i].bottomId = i - columns;
-    grid[i].rightTopId = i + columns + 1;
-    grid[i].leftTopId = i + columns - 1;
-    grid[i].rightBottomId = i - columns + 1;
-    grid[i].leftBottomId = i - columns - 1;
+    const id = i + 1;
+    grid[i].id = id;
+    grid[i].rightId = grid[id + 1];
+    grid[i].leftId = grid[id - 1];
+    grid[i].topId = grid[id + columns];
+    grid[i].bottomId = grid[id - columns];
+    grid[i].rightTopId = grid[id + columns + 1];
+    grid[i].leftTopId = grid[id + columns - 1];
+    grid[i].rightBottomId = grid[id - columns + 1];
+    grid[i].leftBottomId = grid[id - columns - 1];
   }
 };
 
+grid[7 - 1].live = true;
+grid[10 - 1].live = true;
+grid[11 - 1].live = true;
+grid[12 - 1].live = true;
+grid[21 - 1].live = true;
+grid[22 - 1].live = true;
+grid[28 - 1].live = true;
+
 neightbours();
+estadoFicha();
