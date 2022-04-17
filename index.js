@@ -26,20 +26,6 @@ const crearGrid = () => {
 };
 crearGrid();
 
-const alive = [];
-const dead = [];
-
-const estadoFicha = () => {
-  for (let i = 0; i < grid.length; i++) {
-    if (grid[i].live === 1) {
-      alive.push(`${grid[i].id} ${grid[i].live}`);
-    } else {
-      dead.push(`${grid[i].id} ${grid[i].live}`);
-    }
-  }
-  return alive;
-};
-
 const mappingBeightbours = () => {
   for (let i = 0; i < grid.length; i++) {
     const idValue = i + 1;
@@ -106,7 +92,6 @@ const mappingBeightbours = () => {
     }
   }
 };
-
 grid[7 - 1].live = 1;
 grid[10 - 1].live = 1;
 grid[11 - 1].live = 1;
@@ -116,7 +101,6 @@ grid[22 - 1].live = 1;
 grid[28 - 1].live = 1;
 
 mappingBeightbours();
-estadoFicha();
 
 const container = document.querySelector(".container");
 const createGrid = (row, column) => {
